@@ -20,7 +20,7 @@ namespace Test
 
         private void setName(Diary diary)
         {
-            diary.Name = "Marcinek";
+            diary.Name = "Marcin";
         }
     }
 }
