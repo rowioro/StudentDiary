@@ -13,7 +13,10 @@ namespace Lekcja10
         List<float> ratings = new List<float>();
 
         // Metody. Obliczanie sredniej ocen. Wyznaczanie najwiekszej i najmniejszej oceny.
-
+        /// <summary>
+        /// Dodawanie ocen do listy
+        /// </summary>
+        /// <param name="rating">Nowa ocena</param>
         public void AddRating(float rating)
         {
             //float rating;
@@ -45,7 +48,9 @@ namespace Lekcja10
             //}
             ratings.Add(rating);
         }
-
+        /// <summary>
+        /// Pokazuje wszystkie oceny
+        /// </summary>
         public void ShowRaitings()
         {
             foreach (var item in ratings)
@@ -54,7 +59,10 @@ namespace Lekcja10
             }
             Console.WriteLine();
         }
-
+        /// <summary>
+        /// Oblicza srednia wszystkich ocen
+        /// </summary>
+        /// <returns>Srednia ocen</returns>
         public float CalculateAverage()
         {
             float sum = 0;
@@ -64,13 +72,19 @@ namespace Lekcja10
             }
             return sum / ratings.Count();
         }
-
+        /// <summary>
+        /// Podaje najwyzsza ocene
+        /// </summary>
+        /// <returns>Najwyzsza ocena</returns>
         public float MaxRating()
         {
 
             return ratings.Max();
         }
-
+        /// <summary>
+        /// Podaje najnizsza ocene
+        /// </summary>
+        /// <returns>Najnizsza ocena</returns>
         public float MinRating()
         {
 

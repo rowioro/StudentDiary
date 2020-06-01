@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E489A099-20DE-4369-9F3C-1F21B1F79BE9}</ProjectGuid>
+    <ProjectGuid>{44BD4F20-B150-41DE-8A9C-848048F6CB46}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>StudentDiary</RootNamespace>
-    <AssemblyName>StudentDiary</AssemblyName>
+    <RootNamespace>Czlonkowie</RootNamespace>
+    <AssemblyName>Czlonkowie</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Diary.cs" />
-    <Compile Include="DiaryStatistics.cs" />
+    <Compile Include="ChangeNameDelegate.cs" />
+    <Compile Include="ChangeNameEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Swiadectwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

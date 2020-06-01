@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace StudentDiary
 {
-    class Diary
+    public class Diary
     {
+        public Diary()
+        {
+            ratings = new List<float>();
+            count++;
+        }
         // Stan. Wprowadzanie ocen do listy
 
-        List<float> ratings = new List<float>();
+        List<float> ratings;
+
+        // Operator "static" oznacza zmienna statyczna dostepna dla wszystkich obiektow danej klasy !!!
+        public static long count = 0;
+
+        public string Name { get; set; }
 
         // Metody. Obliczanie sredniej ocen. Wyznaczanie najwiekszej i najmniejszej oceny.
 
@@ -25,6 +35,9 @@ namespace StudentDiary
             for (; ; )
             {
                 Console.Write("Dodaj ocene do dzienniczka: ");
+
+                // Funkcja "TryParse" konwertuje podana wartosc na float i sprawdza czy jest liczba !!!
+                // Jezeli wartosc jest liczba to "bool result" jest true i wartosc zostaje przypisana do zmiennej "rating" !!!
                 bool result = float.TryParse(Console.ReadLine(), out rating);
 
                 if (result == false)
@@ -42,30 +55,46 @@ namespace StudentDiary
                     else
                         Console.WriteLine("Podales ocene spoza przedzialu!");
                 }
-                
+
             }
         }
 
-        public float CalculateAverage()
+        public DiaryStatistics ComputeStatistics()
         {
+            DiaryStatistics diaryStatistics = new DiaryStatistics();
+
             float sum = 0;
             foreach (var rating in ratings)
             {
                 sum += rating;
             }
-            return sum / ratings.Count();
+            diaryStatistics.AverageGrade = sum / ratings.Count();
+            diaryStatistics.MaxGrade = ratings.Max();
+            diaryStatistics.MiniGrade = ratings.Min();
+
+            return diaryStatistics;
         }
 
-        public float MaxRating()
-        {
+        //public float CalculateAverage()
+        //{
+        //    float sum = 0;
+        //    foreach (var rating in ratings)
+        //    {
+        //        sum += rating;
+        //    }
+        //    return sum / ratings.Count();
+        //}
 
-            return ratings.Max();
-        }
+        //public float MaxRating()
+        //{
 
-        public float MinRating()
-        {
+        //    return ratings.Max();
+        //}
 
-            return ratings.Min();
-        }
+        //public float MinRating()
+        //{
+
+        //    return ratings.Min();
+        //}
     }
 }
